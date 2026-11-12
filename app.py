@@ -91,12 +91,12 @@ def render_sidebar() -> None:
     """Render sleek modern white sidebar with crisp high-contrast controls."""
     with st.sidebar:
         brand_html = (
-            f'<div style="display: flex; align-items: center; gap: 12px; margin-top: 4px; margin-bottom: 22px; padding: 2px 0;">'
-            f'<div style="background: linear-gradient(135deg, #3B82F6, #1D4ED8); width: 40px; height: 40px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; box-shadow: 0 4px 12px rgba(59, 130, 246, 0.35);">'
+            f'<div style="display: flex; align-items: center; gap: 12px; margin-top: 0px; margin-bottom: 14px; padding: 0;">'
+            f'<div style="background: linear-gradient(135deg, #3B82F6, #1D4ED8); width: 36px; height: 36px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.15rem; box-shadow: 0 4px 10px rgba(59, 130, 246, 0.35);">'
             f'📈'
             f'</div>'
             f'<div>'
-            f'<div style="font-weight: 800; font-size: 1.25rem; letter-spacing: -0.02em; color: #0F172A; line-height: 1.15;">Dashboard</div>'
+            f'<div style="font-weight: 800; font-size: 1.18rem; letter-spacing: -0.02em; color: #0F172A; line-height: 1.12;">Dashboard</div>'
             f'<div style="font-size: 0.68rem; color: #64748B; letter-spacing: 0.08em; font-weight: 700; text-transform: uppercase;">FINTECH TERMINAL</div>'
             f'</div>'
             f'</div>'
