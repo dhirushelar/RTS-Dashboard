@@ -1,0 +1,459 @@
+/* Typography: Plus Jakarta Sans for UI, JetBrains Mono for Numbers */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+:root {
+  --bg-canvas: #F4F7FB;
+  --card-bg: #FFFFFF;
+  --card-border: #E2E8F0;
+  --card-hover-border: #CBD5E1;
+  --accent-primary: #3B82F6;
+  --accent-hover: #2563EB;
+  --gain-color: #10B981;
+  --gain-bg: rgba(16, 185, 129, 0.12);
+  --loss-color: #EF4444;
+  --loss-bg: rgba(239, 68, 68, 0.12);
+  --text-primary: #0F172A;
+  --text-secondary: #334155;
+  --text-muted: #64748B;
+  --sidebar-bg: #FFFFFF;
+  --sidebar-border: #E2E8F0;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --font-ui: 'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+/* Base Body & App Container */
+html, body, .stApp {
+  font-family: var(--font-ui) !important;
+  color: var(--text-primary) !important;
+  background-color: var(--bg-canvas) !important;
+}
+
+/* Tabular Numerals for Monospace Alignment */
+.tabular-nums, .price-display, .metric-value, .ticker-item span {
+  font-family: var(--font-mono) !important;
+  font-feature-settings: "tnum" 1, "zero" 1;
+}
+
+/* Hide Only Unneeded Chrome (Preserve Sidebar Open/Close Toggle) */
+#MainMenu, footer {
+  visibility: hidden;
+  height: 0%;
+  margin: 0;
+  padding: 0;
+  display: none !important;
+}
+
+/* Header: Transparent Background & Keep Sidebar Toggle Button Accessible */
+header[data-testid="stHeader"] {
+  background: transparent !important;
+  z-index: 99 !important;
+}
+
+/* Ensure Sidebar Expand/Collapse Button is Always Visible & Clickable */
+header[data-testid="stHeader"] button,
+[data-testid="stSidebarCollapseButton"],
+[data-testid="stSidebarHeader"] button {
+  visibility: visible !important;
+  display: flex !important;
+  opacity: 1 !important;
+  color: #1E293B !important;
+  background-color: #FFFFFF !important;
+  border: 1px solid #E2E8F0 !important;
+  border-radius: 8px !important;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06) !important;
+}
+
+[data-testid="stSidebarHeader"] {
+  padding-top: 0.5rem !important;
+  padding-bottom: 0.2rem !important;
+  background: transparent !important;
+}
+
+.block-container {
+  padding-top: 1rem !important;
+  padding-bottom: 2rem !important;
+  padding-left: 1.75rem !important;
+  padding-right: 1.75rem !important;
+  max-width: 100% !important;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-canvas);
+}
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-primary);
+}
+
+/* ============================================================ */
+/* ULTRA-CLEAN MODERN SIDEBAR (WHITE, HIGH-CONTRAST, CRISP)     */
+/* ============================================================ */
+section[data-testid="stSidebar"] {
+  background-color: var(--sidebar-bg) !important;
+  border-right: 1px solid var(--sidebar-border) !important;
+  box-shadow: 2px 0 12px rgba(0, 0, 0, 0.02) !important;
+}
+section[data-testid="stSidebar"] .block-container {
+  padding-top: 1.15rem !important;
+  padding-left: 1.25rem !important;
+  padding-right: 1.25rem !important;
+}
+section[data-testid="stSidebar"] p,
+section[data-testid="stSidebar"] span,
+section[data-testid="stSidebar"] label {
+  color: var(--text-secondary) !important;
+  font-weight: 500;
+}
+section[data-testid="stSidebar"] hr {
+  border-color: #F1F5F9 !important;
+  margin: 18px 0 !important;
+}
+
+/* Sidebar Section Headers */
+.sidebar-section-title {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-top: 16px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Sidebar Selectbox & Inputs (Pure White, Crisp Slate Border) */
+section[data-testid="stSidebar"] .stSelectbox > div > div {
+  background-color: #F8FAFC !important;
+  border: 1px solid #E2E8F0 !important;
+  color: #0F172A !important;
+  border-radius: 10px !important;
+  font-weight: 600 !important;
+  transition: all 0.2s ease !important;
+}
+section[data-testid="stSidebar"] .stSelectbox > div > div:hover {
+  border-color: #CBD5E1 !important;
+  background-color: #FFFFFF !important;
+}
+section[data-testid="stSidebar"] .stSelectbox > div > div:focus-within {
+  border-color: #3B82F6 !important;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15) !important;
+  background-color: #FFFFFF !important;
+}
+section[data-testid="stSidebar"] [data-baseweb="select"] span {
+  color: #0F172A !important;
+  font-weight: 600 !important;
+}
+section[data-testid="stSidebar"] [data-baseweb="popover"] {
+  background-color: #FFFFFF !important;
+  color: #0F172A !important;
+}
+
+/* Floating White Top Bar */
+.top-bar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #FFFFFF;
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-md);
+  padding: 12px 20px;
+  margin-bottom: 14px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+}
+
+.market-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.80rem;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+.market-status-open {
+  background: var(--gain-bg);
+  color: var(--gain-color);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+}
+.market-status-closed {
+  background: rgba(100, 116, 139, 0.1);
+  color: var(--text-muted);
+  border: 1px solid rgba(100, 116, 139, 0.2);
+}
+
+/* Pulsing Status Dot */
+.pulsing-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.dot-green {
+  background-color: var(--gain-color);
+  box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  animation: pulse-green 2s infinite;
+}
+.dot-gray {
+  background-color: var(--text-muted);
+}
+
+@keyframes pulse-green {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 6px rgba(16, 185, 129, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+  }
+}
+
+/* Horizontally Scrolling Continuous Ticker Tape */
+.ticker-strip-wrapper {
+  overflow: hidden;
+  background: #FFFFFF;
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-md);
+  padding: 9px 0;
+  white-space: nowrap;
+  position: relative;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+}
+.ticker-track {
+  display: inline-flex;
+  gap: 20px;
+  animation: ticker-slide 32s linear infinite;
+}
+.ticker-track:hover {
+  animation-play-state: paused;
+}
+@keyframes ticker-slide {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.ticker-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.88rem;
+  font-weight: 500;
+  padding: 4px 12px;
+  border-radius: 8px;
+  background: #F8FAFC;
+  border: 1px solid var(--card-border);
+}
+.ticker-symbol {
+  font-weight: 700;
+  color: var(--text-primary);
+}
+.ticker-price {
+  font-family: var(--font-mono);
+  color: var(--text-primary);
+  font-weight: 600;
+}
+.badge-gain {
+  color: var(--gain-color) !important;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  font-weight: 600;
+  background: var(--gain-bg);
+  padding: 2px 8px;
+  border-radius: 6px;
+}
+.badge-loss {
+  color: var(--loss-color) !important;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  font-weight: 600;
+  background: var(--loss-bg);
+  padding: 2px 8px;
+  border-radius: 6px;
+}
+
+/* Modern Fintech Cards */
+.fintech-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-lg);
+  padding: 20px 22px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+.fintech-card:hover {
+  border-color: var(--card-hover-border);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+}
+
+/* KPI Card Typography & Alignment */
+.kpi-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.kpi-title {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.kpi-icon-badge {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: #F1F5F9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+}
+.kpi-value {
+  font-family: var(--font-mono);
+  font-size: 1.85rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.15;
+}
+.kpi-subtext {
+  font-size: 0.82rem;
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Mini Range Bar (Day Range / 52W Range) */
+.range-bar-container {
+  width: 100%;
+  height: 6px;
+  background: #E2E8F0;
+  border-radius: 999px;
+  margin-top: 10px;
+  position: relative;
+  overflow: hidden;
+}
+.range-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #3B82F6, #60A5FA);
+  border-radius: 999px;
+}
+.range-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  margin-top: 4px;
+}
+
+/* Error Banner */
+.error-banner {
+  background: var(--loss-bg);
+  border: 1px solid var(--loss-color);
+  color: var(--loss-color);
+  padding: 12px 16px;
+  border-radius: var(--radius-sm);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.9rem;
+}
+
+/* Recommendation Badges */
+.badge-strong-buy {
+  background: rgba(16, 185, 129, 0.18);
+  color: #059669;
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  padding: 5px 12px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 0.88rem;
+  display: inline-block;
+}
+.badge-buy {
+  background: var(--gain-bg);
+  color: var(--gain-color);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  padding: 5px 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.88rem;
+  display: inline-block;
+}
+.badge-neutral {
+  background: rgba(100, 116, 139, 0.1);
+  color: var(--text-primary);
+  border: 1px solid rgba(100, 116, 139, 0.2);
+  padding: 5px 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.88rem;
+  display: inline-block;
+}
+.badge-sell {
+  background: var(--loss-bg);
+  color: var(--loss-color);
+  border: 1px solid rgba(239, 68, 68, 0.25);
+  padding: 5px 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.88rem;
+  display: inline-block;
+}
+.badge-strong-sell {
+  background: rgba(239, 68, 68, 0.18);
+  color: #DC2626;
+  border: 1px solid rgba(239, 68, 68, 0.35);
+  padding: 5px 12px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 0.88rem;
+  display: inline-block;
+}
+
+/* Mobile & Small Screen Optimizations */
+@media (max-width: 768px) {
+  .block-container {
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+    padding-top: 0.75rem !important;
+  }
+  .fintech-card {
+    padding: 14px 16px;
+  }
+  .kpi-value {
+    font-size: 1.45rem;
+  }
+  .top-bar-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 10px 14px;
+  }
+}
