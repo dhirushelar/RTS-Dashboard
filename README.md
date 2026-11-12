@@ -2,6 +2,10 @@
 
 A sleek, modern, high-performance fintech dashboard designed with the **Linear / Vercel** design language. Built with Python 3.11+, Streamlit, Pandas, NumPy, Plotly, and Requests.
 
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://rts-dashboard.streamlit.app/)
+
+🌐 **Live Production URL**: [https://rts-dashboard.streamlit.app/](https://rts-dashboard.streamlit.app/)
+
 ---
 
 ## TailAdmin Design System (Permanent Theme)
