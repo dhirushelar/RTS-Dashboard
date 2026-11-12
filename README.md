@@ -12,6 +12,10 @@
 
 [**Live Code Repository**](https://github.com/dhirushelar/RTS-Dashboard) • [**Deploy on Streamlit Cloud**](https://share.streamlit.io/deploy?repository=dhirushelar/RTS-Dashboard&branch=main&mainModule=app.py)
 
+<br/>
+
+<img src="assets/dashboard.png" alt="RTS Terminal Dashboard Preview" width="100%" style="border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08);" />
+
 </div>
 
 ---
